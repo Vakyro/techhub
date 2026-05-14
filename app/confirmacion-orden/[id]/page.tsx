@@ -72,7 +72,7 @@ function getStatusColor(status: string) {
 function getStatusLabel(status: string) {
   const labels: Record<string, string> = {
     delivered: "Entregado",
-    shipped: "En transito",
+    shipped: "En tránsito",
     processing: "Procesando",
     confirmed: "Confirmado",
     pending: "Pendiente",
@@ -185,7 +185,7 @@ export default function ConfirmacionOrdenPage() {
             <Link href="/perfil">
               <Button variant="ghost" className="rounded-lg cursor-pointer">
                 <ArrowLeft className="mr-2 h-4 w-4" />
-                Volver a ordenes
+                Volver a órdenes
               </Button>
             </Link>
           </div>
@@ -201,13 +201,13 @@ export default function ConfirmacionOrdenPage() {
           </div>
           <h1 className="mb-2 text-2xl font-bold text-foreground">Orden registrada</h1>
           <p className="text-muted-foreground">
-            Aqui esta el resumen real de tu compra.
+            Aquí está el resumen real de tu compra.
           </p>
         </div>
 
         <div className="mb-6 grid gap-4 sm:grid-cols-3">
           <div className="rounded-xl border border-border bg-card p-4 shadow-soft">
-            <p className="mb-1 text-sm text-muted-foreground">Numero de orden</p>
+            <p className="mb-1 text-sm text-muted-foreground">Número de orden</p>
             <p className="text-lg font-semibold text-foreground">{order.order_number}</p>
           </div>
           <div className="rounded-xl border border-border bg-card p-4 shadow-soft">
@@ -226,11 +226,11 @@ export default function ConfirmacionOrdenPage() {
           <div className="mb-6 rounded-xl border border-border bg-card p-6 shadow-soft">
             <div className="mb-4 flex items-center gap-2">
               <Truck className="h-5 w-5 text-primary" />
-              <h2 className="text-lg font-semibold text-foreground">Seguimiento de envio</h2>
+              <h2 className="text-lg font-semibold text-foreground">Seguimiento de envío</h2>
             </div>
             <div className="grid gap-4 sm:grid-cols-2">
               <div>
-                <p className="mb-1 text-sm text-muted-foreground">Numero de seguimiento</p>
+                <p className="mb-1 text-sm text-muted-foreground">Número de seguimiento</p>
                 <p className="font-mono text-foreground">{order.tracking_number}</p>
               </div>
               <div>
@@ -246,7 +246,7 @@ export default function ConfirmacionOrdenPage() {
         )}
 
         <div className="mb-6 rounded-xl border border-border bg-card p-6 shadow-soft">
-          <h2 className="mb-4 text-lg font-semibold text-foreground">Articulos pedidos</h2>
+          <h2 className="mb-4 text-lg font-semibold text-foreground">Artículos pedidos</h2>
           <div className="space-y-4">
             {order.order_items.map((item) => (
               <div key={item.id} className="flex gap-4 border-b border-border pb-4 last:border-0">
@@ -271,7 +271,7 @@ export default function ConfirmacionOrdenPage() {
               <span className="font-medium text-foreground">${order.subtotal.toFixed(2)}</span>
             </div>
             <div className="flex justify-between">
-              <span className="text-muted-foreground">Envio</span>
+              <span className="text-muted-foreground">Envío</span>
               <span className="font-medium text-foreground">${order.shipping_cost.toFixed(2)}</span>
             </div>
             <div className="flex justify-between">
@@ -289,7 +289,7 @@ export default function ConfirmacionOrdenPage() {
           <div className="rounded-xl border border-border bg-card p-6 shadow-soft">
             <div className="mb-4 flex items-center gap-2">
               <MapPin className="h-5 w-5 text-primary" />
-              <h2 className="text-lg font-semibold text-foreground">Direccion de envio</h2>
+              <h2 className="text-lg font-semibold text-foreground">Dirección de envío</h2>
             </div>
             <div className="space-y-1 text-sm text-muted-foreground">
               <p className="font-medium text-foreground">{order.customer_name}</p>
@@ -304,31 +304,31 @@ export default function ConfirmacionOrdenPage() {
           <div className="rounded-xl border border-border bg-card p-6 shadow-soft">
             <div className="mb-4 flex items-center gap-2">
               <CreditCard className="h-5 w-5 text-primary" />
-              <h2 className="text-lg font-semibold text-foreground">Metodo de pago</h2>
+              <h2 className="text-lg font-semibold text-foreground">Método de pago</h2>
             </div>
             <div className="space-y-2 text-sm">
               <p className="text-muted-foreground">
                 {getCryptoLabel(order.notes) || getPaymentLabel(order.payment_method)}
               </p>
-              <p className="font-medium text-foreground">Metodo de envio: {order.shipping_method}</p>
+              <p className="font-medium text-foreground">Método de envío: {order.shipping_method}</p>
             </div>
           </div>
         </div>
 
         <div className="mb-6 rounded-xl border border-border bg-card p-6 shadow-soft">
-          <h2 className="mb-4 text-lg font-semibold text-foreground">Informacion de contacto</h2>
+          <h2 className="mb-4 text-lg font-semibold text-foreground">Información de contacto</h2>
           <div className="grid gap-4 sm:grid-cols-2">
             <div className="flex items-start gap-3">
               <Mail className="mt-0.5 h-5 w-5 flex-shrink-0 text-muted-foreground" />
               <div>
-                <p className="text-sm text-muted-foreground">Correo electronico</p>
+                <p className="text-sm text-muted-foreground">Correo electrónico</p>
                 <p className="text-foreground">{order.customer_email}</p>
               </div>
             </div>
             <div className="flex items-start gap-3">
               <Phone className="mt-0.5 h-5 w-5 flex-shrink-0 text-muted-foreground" />
               <div>
-                <p className="text-sm text-muted-foreground">Telefono</p>
+                <p className="text-sm text-muted-foreground">Teléfono</p>
                 <p className="text-foreground">{order.customer_phone}</p>
               </div>
             </div>

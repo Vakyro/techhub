@@ -56,7 +56,7 @@ export function FeaturedProducts() {
           </div>
           <Link href="/productos">
             <Button variant="outline" className="w-fit rounded-xl border-primary/20 hover:bg-primary/10">
-              Ver todo el catalogo
+              Ver todo el catálogo
               <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
           </Link>

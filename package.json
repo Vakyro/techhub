@@ -7,7 +7,9 @@
     "start": "next start",
     "lint": "eslint .",
     "dev": "next dev -p 2006",
-    "rag:eval": "node scripts/rag-eval.mjs"
+    "rag:eval": "node scripts/rag-eval.mjs",
+    "record": "playwright test",
+    "record:show": "playwright show-report tests/report"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",
@@ -63,6 +65,7 @@
     "zod": "^3.24.1"
   },
   "devDependencies": {
+    "@playwright/test": "^1.60.0",
     "@tailwindcss/postcss": "^4.2.0",
     "@types/node": "^22",
     "@types/react": "^19",

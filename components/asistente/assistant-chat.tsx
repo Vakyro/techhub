@@ -8,10 +8,10 @@ import { CameraCapture } from "@/components/ui/camera-capture"
 import { ProductRecommendationCard, type ChatProduct } from "@/components/asistente/product-recommendation-card"
 
 const suggestedPrompts = [
-  { icon: Puzzle, text: "Necesito armar un robot seguidor de linea para la escuela" },
-  { icon: Zap, text: "Quiero automatizar el riego de mi jardin con IoT" },
-  { icon: GraduationCap, text: "Busco un kit para aprender electronica basica" },
-  { icon: Package, text: "Necesito componentes para una estacion meteorologica" },
+  { icon: Puzzle, text: "Necesito armar un robot seguidor de línea para la escuela" },
+  { icon: Zap, text: "Quiero automatizar el riego de mi jardín con IoT" },
+  { icon: GraduationCap, text: "Busco un kit para aprender electrónica básica" },
+  { icon: Package, text: "Necesito componentes para una estación meteorológica" },
 ]
 
 interface Message {
@@ -126,7 +126,7 @@ export function AssistantChat({ showIntro = true }: AssistantChatProps) {
         {
           id: (Date.now() + 1).toString(),
           type: "assistant",
-          content: "No pude procesar tu solicitud ahora mismo. Cuéntame tu presupuesto, categoria y tipo de proyecto para ayudarte mejor.",
+          content: "No pude procesar tu solicitud ahora mismo. Cuéntame tu presupuesto, categoría y tipo de proyecto para ayudarte mejor.",
           timestamp: new Date(),
         },
       ])
@@ -163,7 +163,7 @@ export function AssistantChat({ showIntro = true }: AssistantChatProps) {
                     <img src={capturedImage} alt="Foto adjunta" className="h-16 w-16 shrink-0 rounded-lg object-cover" />
                     <div className="min-w-0 flex-1">
                       <p className="text-sm font-medium text-foreground">Foto adjunta</p>
-                      <p className="text-xs text-muted-foreground">Se conserva para usarla en la busqueda visual.</p>
+                      <p className="text-xs text-muted-foreground">Se conserva para usarla en la búsqueda visual.</p>
                     </div>
                     <button
                       type="button"
@@ -245,7 +245,7 @@ export function AssistantChat({ showIntro = true }: AssistantChatProps) {
                   <img src={capturedImage} alt="Foto adjunta" className="h-16 w-16 shrink-0 rounded-lg object-cover" />
                   <div className="min-w-0 flex-1">
                     <p className="text-sm font-medium text-foreground">Foto adjunta</p>
-                    <p className="text-xs text-muted-foreground">Se conserva para usarla en la busqueda visual.</p>
+                    <p className="text-xs text-muted-foreground">Se conserva para usarla en la búsqueda visual.</p>
                   </div>
                   <button
                     type="button"

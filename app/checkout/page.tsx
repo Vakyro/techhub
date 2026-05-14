@@ -198,7 +198,7 @@ export default function CheckoutPage() {
       })
 
       if (orderRes.error) throw orderRes.error
-      if (!orderRes.data) throw new Error("No se creo la orden")
+      if (!orderRes.data) throw new Error("No se creó la orden")
 
       const itemsToAdd = cartItems.flatMap((item) => {
         if (!item.products) return []
@@ -283,7 +283,7 @@ export default function CheckoutPage() {
                 <form onSubmit={handleSubmitOrder} className="space-y-6">
                   {currentStep === "shipping" && (
                     <div className="rounded-xl border border-border bg-card p-6 shadow-soft">
-                      <h2 className="mb-4 text-lg font-semibold text-foreground">Direccion de envio</h2>
+                      <h2 className="mb-4 text-lg font-semibold text-foreground">Dirección de envío</h2>
                       <div className="space-y-4">
                         <div>
                           <label className="mb-1.5 block text-sm font-medium text-foreground">Nombre</label>
@@ -310,7 +310,7 @@ export default function CheckoutPage() {
                           />
                         </div>
                         <div>
-                          <label className="mb-1.5 block text-sm font-medium text-foreground">Telefono</label>
+                          <label className="mb-1.5 block text-sm font-medium text-foreground">Teléfono</label>
                           <input
                             type="tel"
                             name="telefono"
@@ -322,13 +322,13 @@ export default function CheckoutPage() {
                           />
                         </div>
                         <div>
-                          <label className="mb-1.5 block text-sm font-medium text-foreground">Direccion</label>
+                          <label className="mb-1.5 block text-sm font-medium text-foreground">Dirección</label>
                           <input
                             type="text"
                             name="direccion"
                             value={formData.direccion}
                             onChange={handleInputChange}
-                            placeholder="Calle y numero"
+                            placeholder="Calle y número"
                             className="w-full rounded-lg border border-border bg-background px-4 py-2.5 text-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 cursor-text"
                             required
                           />
@@ -360,7 +360,7 @@ export default function CheckoutPage() {
                           </div>
                         </div>
                         <div>
-                          <label className="mb-1.5 block text-sm font-medium text-foreground">Codigo postal</label>
+                          <label className="mb-1.5 block text-sm font-medium text-foreground">Código postal</label>
                           <input
                             type="text"
                             name="codigoPostal"
@@ -373,10 +373,10 @@ export default function CheckoutPage() {
                         </div>
                       </div>
 
-                      <h3 className="mb-4 mt-6 font-semibold text-foreground">Metodo de envio</h3>
+                      <h3 className="mb-4 mt-6 font-semibold text-foreground">Método de envío</h3>
                       <div className="space-y-3">
                         {[
-                          { value: "standard", label: "Estandar", cost: 79, days: "5-7" },
+                          { value: "standard", label: "Estándar", cost: 79, days: "5-7" },
                           { value: "express", label: "Express", cost: 149, days: "2-3" },
                           { value: "local", label: "Local", cost: 0, days: "1-2" },
                         ].map((method) => (
@@ -391,7 +391,7 @@ export default function CheckoutPage() {
                             />
                             <div className="flex-1">
                               <p className="font-medium text-foreground">{method.label}</p>
-                              <p className="text-sm text-muted-foreground">{method.days} dias</p>
+                              <p className="text-sm text-muted-foreground">{method.days} días</p>
                             </div>
                             <p className="font-semibold text-primary">${method.cost}</p>
                           </label>
@@ -431,7 +431,7 @@ export default function CheckoutPage() {
 
                   {currentStep === "payment" && (
                     <div className="rounded-xl border border-border bg-card p-6 shadow-soft">
-                      <h2 className="mb-4 text-lg font-semibold text-foreground">Metodo de pago</h2>
+                      <h2 className="mb-4 text-lg font-semibold text-foreground">Método de pago</h2>
 
                       <div className="mb-4 rounded-xl border border-primary/20 bg-primary/5 p-4">
                         <div className="flex items-start gap-3">
@@ -447,9 +447,9 @@ export default function CheckoutPage() {
 
                       <div className="mb-6 space-y-3">
                         {[
-                          { value: "transfer", label: "Transferencia bancaria", icon: CreditCard, hint: "SPEI y deposito directo" },
+                          { value: "transfer", label: "Transferencia bancaria", icon: CreditCard, hint: "SPEI y depósito directo" },
                           { value: "cash", label: "Pago en efectivo", icon: Truck, hint: "Contra entrega o en sucursal" },
-                          { value: "credit", label: "Tarjeta de credito", icon: Lock, hint: "Cobro seguro con terminal" },
+                          { value: "credit", label: "Tarjeta de crédito", icon: Lock, hint: "Cobro seguro con terminal" },
                           { value: "crypto", label: "Cripto", icon: Coins, hint: "Conecta tu wallet y confirma la red" },
                         ].map((method) => (
                           <label key={method.value} className="flex cursor-pointer items-center gap-3 rounded-lg border border-border p-3 transition-colors hover:bg-secondary">
@@ -550,7 +550,7 @@ export default function CheckoutPage() {
                                   <div className="text-center">
                                     <Coins className="mx-auto mb-2 h-10 w-10 text-primary" />
                                     <p className="text-xs font-medium text-muted-foreground">QR de cobro</p>
-                                    <p className="text-[11px] text-muted-foreground">Esperando confirmacion</p>
+                                    <p className="text-[11px] text-muted-foreground">Esperando confirmación</p>
                                   </div>
                                 </div>
 
@@ -600,7 +600,7 @@ export default function CheckoutPage() {
 
                       <div className="flex gap-3">
                         <Button type="button" onClick={() => setCurrentStep("shipping")} variant="outline" className="flex-1 rounded-lg cursor-pointer">
-                          Atras
+                          Atrás
                         </Button>
                         <Button type="submit" disabled={isProcessing} className="flex-1 rounded-lg bg-primary hover:bg-primary/90 cursor-pointer">
                           {isProcessing ? "Procesando..." : "Confirmar orden"}
@@ -638,7 +638,7 @@ export default function CheckoutPage() {
                     <span className="font-medium text-foreground">${subtotal.toFixed(2)}</span>
                   </div>
                   <div className="flex justify-between text-sm">
-                    <span className="text-muted-foreground">Envio</span>
+                    <span className="text-muted-foreground">Envío</span>
                     <span className="font-medium text-foreground">${shipping.toFixed(2)}</span>
                   </div>
                   <div className="flex justify-between text-sm">

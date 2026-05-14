@@ -68,7 +68,7 @@ export default function AdminPage() {
       color: "bg-green-100 text-green-600",
     },
     {
-      label: "Ã“rdenes",
+      label: “Órdenes”,
       value: "1,234",
       change: "+8.2%",
       trend: "up",
@@ -114,8 +114,8 @@ export default function AdminPage() {
     },
     {
       id: 3,
-      name: "Teclado MecÃ¡nico RGB",
-      category: "PerifÃ©ricos",
+      name: "Teclado Mecánico RGB",
+      category: "Periféricos",
       price: 149.99,
       stock: 5,
       sales: 128,
@@ -135,7 +135,7 @@ export default function AdminPage() {
     {
       id: "2",
       number: "ORD-2024-002",
-      customer: "MarÃ­a GarcÃ­a",
+      customer: "María García",
       total: 899.99,
       status: "processing",
       date: "2024-12-02",
@@ -143,7 +143,7 @@ export default function AdminPage() {
     {
       id: "3",
       number: "ORD-2024-003",
-      customer: "Juan LÃ³pez",
+      customer: "Juan López",
       total: 1299.99,
       status: "delivered",
       date: "2024-11-30",
@@ -169,7 +169,7 @@ export default function AdminPage() {
     },
     {
       id: 3,
-      name: "MarÃ­a GarcÃ­a",
+      name: "María García",
       email: "maria@example.com",
       type: "buyer",
       joinDate: "2024-08-10",
@@ -223,7 +223,7 @@ export default function AdminPage() {
         {/* Title */}
         <div className="mb-8">
           <h1 className="text-3xl font-bold text-foreground">Panel Administrativo</h1>
-          <p className="text-muted-foreground">Gestiona tu tienda, productos, Ã³rdenes y usuarios</p>
+          <p className="text-muted-foreground">Gestiona tu tienda, productos, órdenes y usuarios</p>
         </div>
 
         {/* Stats Grid */}
@@ -267,7 +267,7 @@ export default function AdminPage() {
               >
                 {tab === "overview" && "Resumen"}
                 {tab === "products" && "Productos"}
-                {tab === "orders" && "Ã“rdenes"}
+                {tab === “orders” && “Órdenes”}
                 {tab === "users" && "Usuarios"}
               </button>
             ))}
@@ -280,7 +280,7 @@ export default function AdminPage() {
             {/* Recent Orders */}
             <div className="lg:col-span-2 rounded-xl border border-border bg-card p-6 shadow-soft">
               <div className="mb-4 flex items-center justify-between">
-                <h2 className="text-lg font-semibold text-foreground">Ã“rdenes recientes</h2>
+                <h2 className=”text-lg font-semibold text-foreground”>Órdenes recientes</h2>
                 <Link href="#" className="text-sm text-primary hover:underline">Ver todas</Link>
               </div>
               <div className="space-y-4">
@@ -317,10 +317,10 @@ export default function AdminPage() {
               <div className="rounded-xl border border-border bg-card p-6 shadow-soft">
                 <div className="mb-2 flex items-center justify-between">
                   <ShoppingCart className="h-5 w-5 text-muted-foreground" />
-                  <p className="text-xs text-muted-foreground">Ã“rdenes pendientes</p>
+                  <p className=”text-xs text-muted-foreground”>Órdenes pendientes</p>
                 </div>
                 <p className="text-2xl font-bold text-foreground">24</p>
-                <p className="mt-1 text-sm text-muted-foreground">Requieren atenciÃ³n</p>
+                <p className="mt-1 text-sm text-muted-foreground">Requieren atención</p>
               </div>
 
               <div className="rounded-xl border border-border bg-card p-6 shadow-soft">
@@ -361,7 +361,7 @@ export default function AdminPage() {
                 <thead className="border-b border-border bg-secondary/30">
                   <tr>
                     <th className="px-6 py-4 text-left text-sm font-semibold text-foreground">Producto</th>
-                    <th className="px-6 py-4 text-left text-sm font-semibold text-foreground">CategorÃ­a</th>
+                    <th className="px-6 py-4 text-left text-sm font-semibold text-foreground">Categoría</th>
                     <th className="px-6 py-4 text-left text-sm font-semibold text-foreground">Precio</th>
                     <th className="px-6 py-4 text-left text-sm font-semibold text-foreground">Stock</th>
                     <th className="px-6 py-4 text-left text-sm font-semibold text-foreground">Ventas</th>
@@ -418,7 +418,7 @@ export default function AdminPage() {
                   type="search"
                   value={searchQuery}
                   onValueChange={setSearchQuery}
-                  placeholder="Buscar Ã³rdenes..."
+                  placeholder="Buscar órdenes..."
                   leftIcon={<Search className="h-4 w-4" />}
                   wrapperClassName="flex-1 min-w-0"
                   inputClassName="h-10 rounded-lg border-border bg-background py-2.5 text-sm shadow-none"
@@ -495,8 +495,8 @@ export default function AdminPage() {
                     <th className="px-6 py-4 text-left text-sm font-semibold text-foreground">Usuario</th>
                     <th className="px-6 py-4 text-left text-sm font-semibold text-foreground">Email</th>
                     <th className="px-6 py-4 text-left text-sm font-semibold text-foreground">Tipo</th>
-                    <th className="px-6 py-4 text-left text-sm font-semibold text-foreground">Se uniÃ³</th>
-                    <th className="px-6 py-4 text-left text-sm font-semibold text-foreground">Ã“rdenes</th>
+                    <th className=”px-6 py-4 text-left text-sm font-semibold text-foreground”>Se unió</th>
+                    <th className=”px-6 py-4 text-left text-sm font-semibold text-foreground”>Órdenes</th>
                     <th className="px-6 py-4 text-left text-sm font-semibold text-foreground">Acciones</th>
                   </tr>
                 </thead>

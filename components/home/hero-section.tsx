@@ -12,14 +12,14 @@ const features = [
   },
   {
     icon: TrendingUp,
-    title: "Prediccion IA",
+    title: "Predicción IA",
     description: "Recomendaciones inteligentes",
     color: "bg-accent/30 text-accent-foreground",
   },
   {
     icon: Truck,
     title: "Entrega local",
-    description: "Mismo dia en Tijuana",
+    description: "Mismo día en Tijuana",
     color: "bg-secondary text-secondary-foreground",
   },
   {
@@ -36,7 +36,7 @@ export function HeroSection() {
       <div className="relative mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
           <h1 className="mb-6 text-balance text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
-            Tecnologia, componentes y electronica para{" "}
+            Tecnología, componentes y electrónica para{" "}
             <span className="text-primary">makers de Tijuana</span>
           </h1>
 

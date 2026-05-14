@@ -18,7 +18,8 @@
       "Bash(New-Item -ItemType Directory -Force -Path \"C:\\\\Users\\\\Latitude 7390\\\\desktop\\\\TechHub\\\\app\\\\lista\\\\[token]\")",
       "Bash(Out-Null)",
       "Bash(Write-Output \"Created\")",
-      "Bash(node -e \"const { execSync } = require\\('child_process'\\); console.log\\(execSync\\('npx next info 2>&1'\\).toString\\(\\).substring\\(0, 500\\)\\)\")"
+      "Bash(node -e \"const { execSync } = require\\('child_process'\\); console.log\\(execSync\\('npx next info 2>&1'\\).toString\\(\\).substring\\(0, 500\\)\\)\")",
+      "Bash(npx playwright *)"
     ]
   }
 }

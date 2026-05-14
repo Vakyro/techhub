@@ -250,7 +250,7 @@ export function Header() {
                   <Link href="/iniciar-sesion">
                     <Button variant="outline" className="ml-2 rounded-lg cursor-pointer">
                       <User className="mr-2 h-4 w-4" />
-                      Iniciar sesion
+                      Iniciar sesión
                     </Button>
                   </Link>
                 )}
@@ -359,14 +359,14 @@ export function Header() {
                     }}
                   >
                     <LogOut className="mr-2 h-4 w-4" />
-                    Cerrar sesion
+                    Cerrar sesión
                   </Button>
                 </>
               ) : (
                 <Link href="/iniciar-sesion" onClick={() => setMobileMenuOpen(false)}>
                   <Button variant="outline" className="w-full rounded-lg cursor-pointer">
                     <User className="mr-2 h-4 w-4" />
-                    Iniciar sesion
+                    Iniciar sesión
                   </Button>
                 </Link>
               )}
