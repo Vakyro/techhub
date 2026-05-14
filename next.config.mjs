@@ -8,9 +8,6 @@ const nextConfig = {
   },
   output: 'standalone',
   compress: true,
-  experimental: {
-    optimizeCss: true,
-  },
   poweredByHeader: false,
   reactStrictMode: true,
 }

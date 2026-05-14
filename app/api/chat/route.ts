@@ -478,9 +478,9 @@ Si recomiendas varios, incluye cada ID exacto en el texto.`,
     const recommendedProducts = productsToReturn.map((p) => ({
       id: p.id,
       name: p.name,
+      image_url: p.main_image_url,
       retail_price: p.retail_price,
       stock: p.stock,
-      main_image_url: p.main_image_url,
     }))
     logStage("response_products_built", { recommendedCount: recommendedProducts.length })
 
