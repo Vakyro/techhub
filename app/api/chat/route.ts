@@ -6,6 +6,7 @@ type Product = {
   short_description: string | null
   retail_price: number
   stock: number
+  image_url: string | null
   main_image_url: string | null
 }
 
@@ -290,7 +291,7 @@ async function rewriteSearchQuery(normalizedQuery: string): Promise<string> {
 async function retrieveProducts(query: string, fallbackQuery?: string): Promise<Product[]> {
   const cleanQuery = query
   const cleanFallbackQuery = fallbackQuery && fallbackQuery !== query ? fallbackQuery : ""
-  const select = "id,name,short_description,retail_price,stock,main_image_url"
+  const select = "id,name,short_description,retail_price,stock,image_url,main_image_url"
   logStage("retrieve_start", {
     cleanQueryLength: cleanQuery.length,
     cleanQueryPreview: previewText(cleanQuery),
@@ -478,7 +479,7 @@ Si recomiendas varios, incluye cada ID exacto en el texto.`,
     const recommendedProducts = productsToReturn.map((p) => ({
       id: p.id,
       name: p.name,
-      image_url: p.main_image_url,
+      image_url: p.image_url || p.main_image_url,
       retail_price: p.retail_price,
       stock: p.stock,
     }))
