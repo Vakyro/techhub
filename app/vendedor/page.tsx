@@ -14,7 +14,6 @@ import {
   AlertTriangle,
   DollarSign,
   Eye,
-  Sparkles,
   Activity,
   Edit2,
   Trash2,
@@ -274,7 +273,8 @@ function ProductFormModal({
 
 export default function VendedorPage() {
   const router = useRouter()
-  const { user, isLoading: authLoading, logout } = useSession()
+  const { user, isLoading: authLoading, logout, theme } = useSession()
+  const logoSrc = theme === "dark" ? "/icon_dark.png" : "/icon.png"
 
   const [seller, setSeller] = useState<SellerInfo | null>(null)
   const [products, setProducts] = useState<SellerProduct[]>([])
@@ -452,8 +452,7 @@ export default function VendedorPage() {
       <aside className="fixed left-0 top-0 z-40 hidden h-screen w-60 border-r border-border/50 bg-card lg:flex flex-col">
         <div className="flex h-16 items-center gap-2 border-b border-border/50 px-5">
           <Link href="/" className="flex items-center gap-2 cursor-pointer">
-            <Image src="/icon.png" alt="techHub" width={36} height={36} className="h-9 w-9" />
-            <span className="text-base font-semibold text-foreground">techHub</span>
+            <Image src={logoSrc} alt="techHub" width={36} height={36} className="h-9 w-auto" />
           </Link>
         </div>
 
@@ -492,9 +491,7 @@ export default function VendedorPage() {
       <header className="fixed left-0 right-0 top-0 z-30 h-16 border-b border-border/50 bg-card/90 backdrop-blur-sm lg:left-60">
         <div className="flex h-full items-center justify-between px-4 lg:px-6">
           <div className="flex items-center gap-2 lg:hidden">
-            <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-primary">
-              <Sparkles className="h-4 w-4 text-primary-foreground" />
-            </div>
+            <Image src={logoSrc} alt="techHub" width={40} height={40} className="h-10 w-auto" />
             <span className="font-semibold text-foreground">Panel vendedor</span>
           </div>
 

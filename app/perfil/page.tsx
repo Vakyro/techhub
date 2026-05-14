@@ -32,6 +32,8 @@ import {
   Globe,
   Plus as PlusIcon,
   X,
+  Moon,
+  Sun,
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Header } from "@/components/layout/header"
@@ -87,7 +89,7 @@ type SharedList = {
 
 export default function PerfilPage() {
   const router = useRouter()
-  const { user, isLoading: authLoading, logout } = useSession()
+  const { user, isLoading: authLoading, logout, theme, toggleTheme } = useSession()
   const [activeTab, setActiveTab] = useState<TabType>("overview")
   const [isEditing, setIsEditing] = useState(false)
   const [orders, setOrders] = useState<Order[]>([])
@@ -754,6 +756,34 @@ export default function PerfilPage() {
                   <MapPin className="h-4 w-4 mr-2" />
                   Gestionar
                 </Button>
+              </div>
+            </div>
+
+            <div className="rounded-xl border border-border bg-card p-6 shadow-soft">
+              <div className="flex items-center justify-between">
+                <div>
+                  <h3 className="font-semibold text-foreground">Tema de la aplicación</h3>
+                  <p className="text-sm text-muted-foreground">
+                    {theme === "dark" ? "Modo oscuro activo" : "Modo claro activo"}
+                  </p>
+                </div>
+                <button
+                  onClick={toggleTheme}
+                  className="relative inline-flex h-10 w-20 items-center rounded-full border border-border bg-secondary transition-colors hover:border-primary/50 cursor-pointer"
+                  aria-label="Cambiar tema"
+                >
+                  <span
+                    className={`absolute left-1 flex h-8 w-8 items-center justify-center rounded-full bg-card shadow-soft transition-transform duration-300 ${
+                      theme === "dark" ? "translate-x-10" : "translate-x-0"
+                    }`}
+                  >
+                    {theme === "dark" ? (
+                      <Moon className="h-4 w-4 text-primary" />
+                    ) : (
+                      <Sun className="h-4 w-4 text-primary" />
+                    )}
+                  </span>
+                </button>
               </div>
             </div>
 

@@ -139,7 +139,7 @@ export default function IniciarSesionPage() {
                   <Store className="h-6 w-6" />
                 </div>
                 <div className="flex-1">
-                  <h3 className="mb-1 text-lg font-semibold text-foreground">Comprador mayorista</h3>
+                  <h3 className="mb-1 text-lg font-semibold text-foreground">Vendedor</h3>
                   <p className="text-sm text-muted-foreground">
                     Cuenta empresarial para compras al mayoreo. Accede a precios preferenciales, facturación y crédito comercial.
                   </p>
@@ -175,10 +175,10 @@ export default function IniciarSesionPage() {
               </div>
               <div>
                 <h3 className="font-semibold text-foreground">
-                  {userType === "usuario" ? "Usuario" : "Comprador mayorista"}
+                  {userType === "usuario" ? "Usuario" : "Vendedor"}
                 </h3>
                 <p className="text-xs text-muted-foreground">
-                  {userType === "usuario" ? "Cuenta personal" : "Cuenta empresarial"}
+                  {userType === "usuario" ? "Cuenta personal" : "Cuenta de vendedor"}
                 </p>
               </div>
             </div>

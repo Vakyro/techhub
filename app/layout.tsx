@@ -60,6 +60,11 @@ export default function RootLayout({
         <link rel="mask-icon" href="/logo.svg" color="#64ae63" />
       </head>
       <body className="font-sans antialiased bg-background">
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem('techhub_theme');if(t==='dark')document.documentElement.classList.add('dark')}catch(e){}})()`,
+          }}
+        />
         <SessionProvider>
           {children}
           <Toaster />

@@ -19,7 +19,8 @@
       "Bash(Out-Null)",
       "Bash(Write-Output \"Created\")",
       "Bash(node -e \"const { execSync } = require\\('child_process'\\); console.log\\(execSync\\('npx next info 2>&1'\\).toString\\(\\).substring\\(0, 500\\)\\)\")",
-      "Bash(npx playwright *)"
+      "Bash(npx playwright *)",
+      "Bash(npx tsc *)"
     ]
   }
 }

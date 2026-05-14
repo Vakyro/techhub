@@ -16,6 +16,8 @@ interface SessionContextType {
   isLoading: boolean
   isAuthenticated: boolean
   logout: () => void
+  theme: "light" | "dark"
+  toggleTheme: () => void
 }
 
 const SessionContext = createContext<SessionContextType | undefined>(undefined)
@@ -24,8 +26,14 @@ export function SessionProvider({ children }: { children: React.ReactNode }) {
   const [user, setUser] = useState<User | null>(null)
   const [isLoading, setIsLoading] = useState(true)
   const [isAuthenticated, setIsAuthenticated] = useState(false)
+  const [theme, setTheme] = useState<"light" | "dark">("light")
 
   useEffect(() => {
+    const saved = localStorage.getItem("techhub_theme") as "light" | "dark" | null
+    const resolved = saved ?? "light"
+    setTheme(resolved)
+    document.documentElement.classList.toggle("dark", resolved === "dark")
+
     initializeSession()
 
     const handleStorageChange = () => {
@@ -65,8 +73,15 @@ export function SessionProvider({ children }: { children: React.ReactNode }) {
     window.dispatchEvent(new Event("session-update"))
   }
 
+  const toggleTheme = () => {
+    const next = theme === "light" ? "dark" : "light"
+    setTheme(next)
+    localStorage.setItem("techhub_theme", next)
+    document.documentElement.classList.toggle("dark", next === "dark")
+  }
+
   return (
-    <SessionContext.Provider value={{ user, isLoading, isAuthenticated, logout }}>
+    <SessionContext.Provider value={{ user, isLoading, isAuthenticated, logout, theme, toggleTheme }}>
       {children}
     </SessionContext.Provider>
   )

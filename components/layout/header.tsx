@@ -43,7 +43,8 @@ export function Header() {
   const desktopSearchRef = useRef<HTMLDivElement>(null)
   const mobileSearchRef = useRef<HTMLDivElement>(null)
   const router = useRouter()
-  const { user, logout } = useSession()
+  const { user, logout, theme } = useSession()
+  const logoSrc = theme === "dark" ? "/icon_dark.png" : "/icon.png"
 
   useEffect(() => {
     const loadCartCount = async () => {
@@ -173,7 +174,7 @@ export function Header() {
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="flex h-16 items-center justify-between">
               <Link href={user?.role === "seller" ? "/vendedor" : "/"} className="flex items-center cursor-pointer">
-                <Image src="/icon.png" alt="techHub" width={64} height={64} className="h-14 w-auto" priority />
+                <Image src={logoSrc} alt="techHub" width={64} height={64} className="h-14 w-auto" priority />
               </Link>
 
               <nav className="flex items-center gap-1">
@@ -264,7 +265,7 @@ export function Header() {
         <div className="navbar-solid shadow-soft">
           <div className="flex h-14 items-center justify-between px-4">
             <Link href={user?.role === "seller" ? "/vendedor" : "/"} className="flex items-center cursor-pointer">
-              <Image src="/icon.png" alt="techHub" width={64} height={64} className="h-12 w-auto" priority />
+              <Image src={logoSrc} alt="techHub" width={64} height={64} className="h-12 w-auto" priority />
             </Link>
 
             <div className="flex items-center gap-1">
